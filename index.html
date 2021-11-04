@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Online Store</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles/styles.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script>
+            //Alert continue
+            function AlertIt() {
+                var answer = confirm ("Please click on OK to continue.")
+                if (answer)
+                    window.location="#";
+}
+            //Check and Allow only Numerical Value
+            function isNumberKey(evt){
+                var charCode = (evt.which) ? evt.which : evt.keyCode
+                if (charCode > 31 && (charCode < 48 || charCode > 57))
+                    return false;
+                return true;
+            }
+            
+            //Ceck if Terms and condition button is checked
+            function disableSubmit() {
+                document.getElementById("submit").disabled = true;
+            }
+
+            function activateButton(element) {
+
+                if(element.checked) {
+                    document.getElementById("submit").disabled = false;
+                }
+                else  {
+                    document.getElementById("submit").disabled = true;
+                }
+
+            }
+        </script>
+    </head>
+    <body>
+        <div class="main-page">
+            <div class="page-sections">
+                <div class="page-head">
+                    <div class="headding">
+                        <p>[HEADING]</p>
+                    </div>
+                </div>
+                <div class="page-body">
+                    <div class="form-top">
+                        <h1>Billing Form</h1>
+                        <ul>
+                            <li>||</li>
+                            <li><a href="#">Address</a></li>
+                            <li>||</li>
+                            <li><a href="#">Payment</a></li>
+                            <li>||</li>
+                            <li><a href="#">Review & Submit</a></li>
+                            <li>||</li>
+                        </ul>
+                        <hr>
+                    </div>
+                    <div class="main-form">
+                        <form action="results.html" method="GET">
+                            <div class="container_fullname">
+                                <div class="fullname">
+                                    <br>
+                                    <label id="fullname">Full Name:</label>
+                                    <input type="text" name="fname" placeholder="First Name" required>
+                                    <input type="text" name="mname" placeholder="Middle Name" required>
+                                    <input type="text" name="lname" placeholder="Last Name" required>
+                                    <input type="text" name="sufix" placeholder="Sufix"> <br>
+                                </div>
+                            </div>
+                            
+                            <label>Email:</label>
+                            <input type="email" name="email" placeholder="example@domain.com" required> <br>
+            
+                            <label>Address:</label>
+                            <input type="text" name="address" placeholder="House No, Street, Dist/Pob, Brgy" size="30" required> <br>
+                            
+            
+                            <label>City:</label>
+                            <select name="select-city">
+                                <option value="none" selected disabled hidden>Select an Option</option>
+                                <option value="ormoc-city">Ormoc City</option>
+                                <option value="cebu-city">Cebu City</option>
+                                <option value="quezon-city">Quezon City</option>
+                                <option value="davao-city">Davao City</option>
+                                <option value="other-city">Others</option>
+                            </select> <br>
+            
+                            <label>State/Province:</label>
+                            <select name="select-state">
+                                <option value="none" selected disabled hidden>Select an Option</option>
+                                <option value="leyte">Leyte</option>
+                                <option value="cebu">Cebu</option>
+                                <option value="bukidnon">Bukidnon</option>
+                                <option value="davaoDelSur">Davao del Sur</option>
+                                <option value="other-province">Others</option>
+                            </select> <br>
+            
+                            <label>Postal/Zip Code:</label>    <!-- Limits number length -->
+                            <input type="number" name="postal" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="4" onkeypress="return isNumberKey(event)" placeholder="ex. 4345" required> <br>
+            
+                            <label>Country:</label>
+                            <select name="select-country">
+                                <option value="none" selected disabled hidden>Select an Option</option>
+                                <option value="philippines">Philippines</option>
+                                <option value="other-province">Others</option>
+                            </select> <br>
+            
+                            <label>Phone Number:</label>        <!-- Limits number length -->
+                            <input type="number" name="pnumber" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="11" onkeypress="return isNumberKey(event)" placeholder="ex. 09376726567" required> <br>
+            
+                            <label>Note:</label> <br>
+                            <textarea name="note" placeholder="Enter additional delivery message (Optional)"></textarea> <br>
+            
+                            <label>Mode of Payment:</label>
+                            <select name="paymentmethod">
+                                <option value="none" selected disabled hidden>Select an Option</option>
+                                <option value="cod">Cash on Delivery (COD)</option>
+                                <option value="card">Credit/Debit Card</option>
+                                <option value="paymentcenter">Payment Center</option>
+                                <option value="otc">Over-the-Counter (OTC)</option>
+                            </select> <br>
+            
+                            <label>Agree to the <a href="javascript:AlertIt();">Terms and Condition</a>:</label>
+                            <input class="checkbox" type="checkbox" name="agree" required>
+                            <input type="submit" id="submit" value="Submit">
+                        </form>
+                    </div>
+                </div>
+                <div class="page-foot">
+                    <div class="footer">
+                        <section class="footer-content">
+                            <h3>The Untitled Prog-A JAVA Project</h3>
+                            <p>Please don't hesitate to contact us through the following socials:</p>
+                            <ul class="socials">
+                                <li><a href="#" onclick="return confirm('Sorry Currently not working... Please click on OK to continue.');"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#" onclick="return confirm('Sorry Currently not working... Please click on OK to continue.');"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" onclick="return confirm('Sorry Currently not working... Please click on OK to continue.');"><i class="fa fa-instagram"></i></a></li>
+                            </ul>
+                        </section>
+                        <section class="footer-bottom">
+                            <p>copyright &copy;2021 nolisoli.ph, designed by <span>Prog-A JAVA</span></p>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
